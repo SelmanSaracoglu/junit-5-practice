@@ -29,8 +29,13 @@ public class CalculatorTest {
 
     @Test
     public void divideByZeroShouldReturnNull(){
-        Integer result = underTest.divide(10,0);
-        assertNull(result, "Division by zero should result in null");
+        //Integer result = underTest.divide(10,0);
+        //assertNull(result, "Division by zero should result in null");
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            underTest.divide(10,0);
+                });
+
+
     }
 
     @Test
